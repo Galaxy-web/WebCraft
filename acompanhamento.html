@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompanhamento</title>
+</head>
+<body>
+    <h1>Dados Recebidos</h1>
+    <script>
+        // Obtém os dados da URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var data = urlParams.get('data');
+
+        // Converte a string JSON de volta para objeto
+        var formData = JSON.parse(decodeURIComponent(data));
+
+        // Exibe os dados na página
+        document.write("<p><strong>Nome:</strong> " + formData.name + "</p>");
+        document.write("<p><strong>E-mail:</strong> " + formData.email + "</p>");
+        document.write("<p><strong>Mensagem:</strong> " + formData.message + "</p>");
+    </script>
+</body>
+</html>
