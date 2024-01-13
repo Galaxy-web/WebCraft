@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebCraft Group</title>
+    <title>WebCraft Group - Desenvolvimento de Websites e Projetos Digitais</title>
+    <meta name="description" content="Conheça a WebCraft Group, um grupo de desenvolvedores prontos para grandes negócios. Oferecemos serviços de design, desenvolvimento web, orçamento personalizado e mais. Explore nossos projetos e entre em contato.">
+    <meta name="keywords" content="WebCraft Group, desenvolvimento web, projetos digitais, orçamento, design, front end, back end">
+    <meta name="author" content="WebCraft_Groups">
+     <!-- Favicon -->
+     <link rel="shortcut icon" href="Logo studio de desenvolvimento code.png" type="image/x-icon">
+
+     <!-- CSS externo -->
+     <link rel="stylesheet" href="index.css">
+ 
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-cZSKiIYFYYOOqDyF5i3kZmyS5Z5xyID9iWllbsOapE5/DuqFACAB2e8Lc8t7ML7U" crossorigin="anonymous">
+ 
+     <!-- JavaScript externo -->
+     <script src="path/to/favico.js"></script>
+     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js"></script>
     <link rel="shortcut icon" href="Logo studio de desenvolvimento code.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-cZSKiIYFYYOOqDyF5i3kZmyS5Z5xyID9iWllbsOapE5/DuqFACAB2e8Lc8t7ML7U" crossorigin="anonymous">
     <script src="path/to/favico.js"></script>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js"></script>
 </head>
@@ -35,18 +52,27 @@
     </div>
 </section>
 
-    <!-- Contêiner principal -->
+<!-- Seção de vídeo -->
 <div class="video-container">
-    <!-- Tag de vídeo para incorporar o vídeo -->
-    <video controls>
-      <source src="seu-video.mp4" type="video/mp4">
-      Seu navegador não suporta o elemento de vídeo.
+    <video id="customVideo" poster="thumbnail.jpg">
+        <source src="seu-video.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
     </video>
-    <!-- Sobreposição sobre o vídeo para adicionar texto ou conteúdo adicional -->
     <div class="overlay">
-      <p>Conheça a Produção da WebCraft!</p>
+        <p>Conheça a Produção da WebCraft!</p>
     </div>
-  </div>
+    <div class="custom-controls">
+        <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+        <div class="progress-bar">
+            <div id="progress" class="progress"></div>
+        </div>
+        <div class="volume-control">
+            <button id="volumeBtn"><i class="fas fa-volume-up"></i></button>
+            <input type="range" id="volumeRange" min="0" max="1" step="0.1" value="0.5">
+        </div>
+        <button id="fullscreenBtn"><i class="fas fa-expand"></i></button>
+    </div>
+</div>
 
   <section class="inicio">
     <h2>Sobre nossos Diferenciais:</h2>
@@ -66,64 +92,35 @@
     </div>
 </div>
 
-    <div class="team-section">
-        <!-- Membro 1 -->
-        <div class="team-member">
-          <img src="membro1.jpg" alt="Membro 1">
-          <div class="team-member-info">
-            <h2>Nome Membro 1</h2>
-            <p>Função e habilidades</p>
-          </div>
-        </div>
-    
-        <!-- Membro 2 -->
-        <div class="team-member">
-          <img src="membro2.jpg" alt="Membro 2">
-          <div class="team-member-info">
-            <h2>Nome Membro 2</h2>
-            <p>Função e habilidades</p>
-          </div>
-        </div>
-
-        <!-- Membro 3 -->
-        <div class="team-member">
-            <img src="membro1.jpg" alt="Membro 1">
-            <div class="team-member-info">
-              <h2>Nome Membro 1</h2>
-              <p>Função e habilidades</p>
-            </div>
-          </div>
-      
-          <!-- Membro 4 -->
-          <div class="team-member">
-            <img src="membro2.jpg" alt="Membro 2">
-            <div class="team-member-info">
-              <h2>Nome Membro 2</h2>
-              <p>Função e habilidades</p>
-            </div>
-          </div>
-
-          <!-- Membro 5 -->
-        <div class="team-member">
-            <img src="membro1.jpg" alt="Membro 1">
-            <div class="team-member-info">
-              <h2>Nome Membro 1</h2>
-              <p>Função e habilidades</p>
-            </div>
-          </div>
-      
-          <!-- Membro 6 -->
-          <div class="team-member">
-            <img src="membro2.jpg" alt="Membro 2">
-            <div class="team-member-info">
-              <h2>Nome Membro 2</h2>
-              <p>Função e habilidades</p>
-            </div>
-          </div>
-    
-        <!-- Repita este bloco para os outros membros da equipe -->
-    
+<div class="team-section">
+  <!-- Membro 1 -->
+  <div class="team-member">
+      <img src="perfil.jfif" alt="Membro 1">
+      <div class="team-member-info">
+          <h2>Jair Miguel</h2>
+          <p>Front end - skills:<br>
+              <br>html5;<br>
+              JavaScript;<br>
+              Css3;
+          </p>
       </div>
+  </div>
+
+  <!-- Membro 2 -->
+  <div class="team-member">
+      <img src="membro2.jpg" alt="Membro 2">
+      <div class="team-member-info">
+          <h2>Davi Mancebo</h2>
+          <p>Back end - Skills:<br>
+              <br>Phyton;<br>
+              C#;<br>
+              ...
+          </p>
+      </div>
+  </div>
+  <button class="join-button"><a href="registro.html">Quero fazer parte do time</a></button>
+</div>
+
 
       <div class="gallery-section">
         <h2>Nossos Projetos</h2>
@@ -153,17 +150,13 @@
     </div>
 
     <h1>Formulário de Contato</h1>
-    <form id="contactForm">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">Mensagem:</label>
-        <textarea id="message" name="message" required></textarea>
-        
-        <button type="button" onclick="submitForm()">Enviar</button>
+    <form id="myForm">
+        <!-- Seus campos de formulário aqui -->
+        <input type="text" id="name" placeholder="Nome">
+        <input type="email" id="email" placeholder="Email">
+        <textarea id="message" placeholder="Mensagem"></textarea>
+        <!-- Corrigido: Ajuste o tipo para 'button' -->
+        <button type="button" id="submitButton">Enviar</button>
     </form>
 
     <div class="testimonial-section">
@@ -187,37 +180,35 @@
     
       </div>
 
-      <div class="chat-popup" id="chatPopup">
-        <div class="chat-area" id="chatArea"></div>
-        <div class="chat-input">
-          <input type="text" id="userInput" placeholder="Digite sua mensagem...">
-          <button id="sendMessageButton">Enviar</button>
+      <div>
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-area" id="chatArea"></div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Digite sua mensagem...">
+                <button id="sendMessageButton" onclick="sendMessage()">Enviar</button>
+            </div>
+            <button class="btn-close" onclick="toggleChat()">Fechar</button>
         </div>
-        <button class="btn-close" onclick="toggleChat()">Fechar</button>
-      </div>
     
-      <button class="btn-open" onclick="toggleChat()">ChatCraft</button>
-    
-      <script src="chatbot.js"></script>
-      <script src="mensagem.js"></script>    
-
-</div>
+        <button class="btn-open" onclick="toggleChat()">
+            <div id="chat-icon" class="message-bubble">
+                <i class="fas fa-comment"></i>
+            </div>
+        </button>
+    </div>
 
 <footer>
     <ul class="social-icons">
         <li><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
         <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
-        <li><a href="https://api.whatsapp.com/send?phone=SEUNUMERO" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+        <li><a href="https://api.whatsapp.com/send?phone=41998663390" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
     </ul>
     <p class="rights-reserved">&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
 </footer>
 
+<script src="chatbot.js"></script>
+<script src="mensagem.js"></script>
 <script src="script.js"></script>
-<script>
-    var favicon = new Favico({
-        position: 'up'
-    });
-    favicon.badge(1);
-</script>
+<!-- Restante do código permanece inalterado -->
 </body>
 </html>

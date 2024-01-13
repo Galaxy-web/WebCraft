@@ -1,24 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acompanhamento</title>
+    <link rel="shortcut icon" href="Logo studio de desenvolvimento code.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .login {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .login h1 {
+            color: white;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .login input[type="text"],
+        .login input[type="password"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s;
+        }
+
+        .login input[type="text"]:focus,
+        .login input[type="password"]:focus {
+            width: 280px;
+            border-color: #2ecc71;
+        }
+
+        .login button {
+            display: block;
+            width: 100%;
+            height: 50px;
+            border: none;
+            background: #3498db;
+            background-size: 200%;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+            border-radius: 24px;
+            transition: .5s;
+        }
+
+        .login button:hover {
+            background-position: right;
+        }
+
+        .data {
+            display: none;
+        }
+
+        .data h1 {
+            color: white;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.section {
+    margin-bottom: 2em;
+    transition: all 0.5s ease;
+}
+
+.section:hover {
+    transform: scale(1.05);
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #444;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.custom-table th,
+.custom-table td {
+    padding: 1em;
+    border: 1px solid #ddd;
+}
+
+.custom-table th {
+    background-color: #333;
+    color: #fff;
+}
+
+.custom-table tr {
+    transition: all 0.5s ease;
+}
+
+.custom-table tr:nth-child(even) {
+    background-color: #eee;
+}
+
+.custom-table tr:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content {
+    padding: 1em;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+    </style>
+    <script>
+        function checkLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if((username == 'JairAdm123' || username == 'DaviAdm123') && password == '1234Adm') {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('data').style.display = 'block';
+            } else {
+                alert('Detalhes de login incorretos');
+            }
+        }
+    </script>
 </head>
 <body>
-    <h1>Dados Recebidos</h1>
-    <script>
-        // Obtém os dados da URL
-        var urlParams = new URLSearchParams(window.location.search);
-        var data = urlParams.get('data');
+    <div id="login" class="login">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="checkLogin()">Login</button>
+    </div>
+    <div id="data" class="data">
+        <h1>Dados Recebidos</h1>
+        <div class="container">
+            <section id="formsDeTrabalho" class="section">
+                <h2>Forms de Trabalho</h2>
+                <div id="formsTableContainer" class="table-container">
+                    <table id="formsTable" class="custom-table">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Email</th>
+                                <th>Mensagem</th>
+                                <th>Ações</th> <!-- Nova coluna para o botão "Excluir" -->
+                            </tr>
+                        </thead>
+                        <tbody id="formsTableBody">
+                            <!-- Dados do formulário serão adicionados aqui dinamicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-        // Converte a string JSON de volta para objeto
-        var formData = JSON.parse(decodeURIComponent(data));
-
-        // Exibe os dados na página
-        document.write("<p><strong>Nome:</strong> " + formData.name + "</p>");
-        document.write("<p><strong>E-mail:</strong> " + formData.email + "</p>");
-        document.write("<p><strong>Mensagem:</strong> " + formData.message + "</p>");
-    </script>
+            <section id="integrantes" class="section">
+                <h2>Integrantes</h2>
+                <div id="integrantesContent" class="content">
+                    <!-- Área sem conhecimento com programação -->
+                    <div id="noProgrammingKnowledge">
+                        <h3>Área sem conhecimento com programação</h3>
+                        <div id="noProgrammingData">
+                            <!-- Dados do formulário serão adicionados aqui dinamicamente -->
+                        </div>
+                    </div>
+        
+                    <!-- Área que possui conhecimento com programação -->
+                    <div id="withProgrammingKnowledge">
+                        <h3>Área que possui conhecimento com programação</h3>
+                        <div id="programmingData">
+                            <!-- Dados do formulário serão adicionados aqui dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="acompanhamento.js"></script>
+    </div>
 </body>
 </html>

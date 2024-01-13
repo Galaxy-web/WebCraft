@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Integrantes</title>
+    <link rel="shortcut icon" href="Logo studio de desenvolvimento code.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);
+            background-size: 200% 100%;
+            animation: gradient 10s ease infinite;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        main {
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #3498db;
+        }
+
+        p {
+            color: #555;
+        }
+
+        button {
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #219653;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cadastro de Integrantes</h1>
+    </header>
+    <main>
+        <section id="sectionConhecimento">
+            <h2>Tenho conhecimento com programação</h2>
+            <p>
+                Se você já possui experiência em programação, venha fazer parte do nosso time de desenvolvedores
+                e contribuir para projetos incríveis!
+            </p>
+            <button onclick="irParaProximaPagina('comConhecimento')">Próxima Página</button>
+        </section>
+
+        <section id="sectionInteresse">
+            <h2>Não tenho conhecimento em programação, mas tenho interesse</h2>
+            <p>
+                Se você não tem experiência em programação, mas tem vontade de aprender e se desenvolver, esta
+                é uma excelente oportunidade para começar sua jornada na área de desenvolvimento de software.
+            </p>
+            <button onclick="irParaProximaPagina('semConhecimento')">Próxima Página</button>
+        </section>
+    </main>
+
+    <script>
+        function irParaProximaPagina(tipo) {
+            if (tipo === 'comConhecimento') {
+                window.location.href = 'com_conhecimento.html';
+            } else if (tipo === 'semConhecimento') {
+                window.location.href = 'sem_conhecimento.html';
+            }
+        }
+    </script>
+</body>
+</html>

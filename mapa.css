@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+}
+
+#mapa {
+    width: 80%;
+    margin: 20px auto;
+    border: 2px solid #800080;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+}
+
+#mapa h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #800080;
+}
+
+#mapa ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#mapa li {
+    width: 20%;
+    height: 20%;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #800080;
+    border-radius: 10px;
+    background-color: #000;
+    position: relative;
+}
+
+#mapa li:before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: #800080;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#mapa li:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #800080;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+#mapa li span {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 10px;
+    background-image: url("icones.png");
+    background-repeat: no-repeat;
+}
+
+#mapa li p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #fff;
+    text-align: justify;
+}
+
+.icone.contato {
+    background-position: 0 0;
+}
+
+.icone.orcamento {
+    background-position: -32px 0;
+}
+
+.icone.inicio {
+    background-position: -64px 0;
+}
+
+.icone.durante {
+    background-position: -96px 0;
+}
+
+.icone.entrega {
+    background-position: -128px 0;
+}
